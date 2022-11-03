@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Scheme Generator</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="picking-section">
+        <input type="color" name="color" id="color" />
+
+        <select name="color" id="color-mode">
+          <option value="monochrome">Monochrome</option>
+          <option value="monochrome-dark">Monochrome-dark</option>
+          <option value="monochrome-light">Monochrome-light</option>
+          <option value="analogic">Analogic</option>
+          <option value="complement">Complement</option>
+          <option value="analogic-complement">Analogic-complement</option>
+          <option value="triad">Triad</option>
+          <option value="quad">Quad</option>
+        </select>
+
+        <button id="select">Get color scheme</button>
+      </div>
+      <div id="display-section" class="display-section">
+        <div class="color-section">
+          <div id="display-1" class="display"></div>
+          <div class="color-code"></div>
+        </div>
+
+        <div class="color-section">
+          <div id="display-2" class="display"></div>
+          <div class="color-code"></div>
+        </div>
+
+        <div class="color-section">
+          <div id="display-3" class="display"></div>
+          <div class="color-code"></div>
+        </div>
+
+        <div class="color-section">
+          <div id="display-4" class="display"></div>
+          <div class="color-code"></div>
+        </div>
+
+        <div class="color-section">
+          <div id="display-5" class="display"></div>
+          <div class="color-code"></div>
+        </div>
+
+        <div class="color-section">
+          <div id="display-6" class="display"></div>
+          <div class="color-code"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
