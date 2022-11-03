@@ -1,15 +1,39 @@
-document.getElementById("select").addEventListener("click", () => {
+let length = document.getElementById("length").value;
+
+function render() {
+  let = colorBlockHtml = "";
+
+  for (let i = 0; i < length; i++) {
+    colorBlockHtml += `
+<div class="color-section">
+<div id="display-${i}" class="display"></div>
+<div id="color-code-${i}" class="color-code"></div>
+</div>`;
+  }
+  document.getElementById("display-section").innerHTML = colorBlockHtml;
+}
+
+render();
+showPalette();
+
+function showPalette() {
   let color = document.getElementById("color").value.replace("#", "");
-  let url = `https://www.thecolorapi.com/scheme?hex=${color}&mode=monochrome&count=6`;
+  let mode = document.getElementById("color-mode").value;
+  let url = `https://www.thecolorapi.com/scheme?hex=${color}&mode=${mode}&count=${length}`;
 
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      let targetColor = data.colors[0].hex.value;
-      document.getElementById("display-1").style.background = targetColor;
-      document.getElementById("color-code-1").textContent = targetColor;
-    });
-});
+      for (let i = 0; i < data.colors.length; i++) {
+        let color = data.colors[i].hex.value;
+        document.getElementById(`display-${i}`).style.background = color;
 
-//
-//
+        document.getElementById(`color-code-${i}`).textContent = color;
+      }
+    });
+}
+
+document.getElementById("select").addEventListener("click", () => {
+  render();
+  showPalette();
+});
