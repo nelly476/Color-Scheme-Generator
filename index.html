@@ -7,7 +7,7 @@
     <title>Color Scheme Generator</title>
 
     <!-- JS, CSS -->
-    <script src="index.js" defer></script>
+    <script src="index.js" type="module" defer></script>
     <link rel="stylesheet" href="index.css" />
 
     <!-- Fonts -->
@@ -20,6 +20,16 @@
   </head>
   <body>
     <div class="container">
+      <div class="warning-modal" id="warning-modal">
+        <div class="warning-close-btn-section">
+          <button class="close-modal-btn" id="close-modal-btn">x</button>
+        </div>
+
+        <div class="warning-modal-content">
+          <p>Please choose a number between 1 and 15</p>
+        </div>
+      </div>
+
       <div class="picking-section">
         <div class="set-color-section">
           <input type="color" name="color" id="color" value="#34d399" />

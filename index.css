@@ -5,9 +5,12 @@ body {
   justify-content: center;
   font-family: "Anek Telugu", sans-serif;
   font-family: "Roboto", sans-serif;
+  max-width: 100vw;
 }
 
 .container {
+  position: relative;
+  max-width: 100%;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -29,14 +32,16 @@ body {
   margin-bottom: 0.9em;
 }
 
-.select {
+.select,
+.close-modal-btn {
   background-color: #f1f5f9;
   border: 2px solid #e2e8f0d8;
   padding: 0.5em;
   border-radius: 6px;
 }
 
-.select:hover {
+.select:hover,
+.close-modal-btn:hover {
   cursor: pointer;
   background-color: #e2e8f0d8;
 }
@@ -46,7 +51,7 @@ body {
 }
 
 .display {
-  width: 110px;
+  min-width: 5em;
   height: 450px;
 }
 .color-code {
@@ -55,4 +60,26 @@ body {
   align-items: center;
   justify-content: center;
   border: 1px solid #f1f5f9;
+}
+
+.warning-modal {
+  position: absolute;
+  top: 0.2em;
+  left: 0;
+  right: 0;
+  margin: auto auto;
+  background-color: #f1f5f9;
+  width: 80%;
+  padding: 1em;
+  border-radius: 8px;
+  display: none;
+}
+
+.warning-close-btn-section {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.close-modal-btn {
+  padding: 0.2em 0.4em;
 }

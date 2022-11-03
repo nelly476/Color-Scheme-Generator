@@ -1,7 +1,23 @@
+import { displayModal, hideModal } from "./utils.js";
+
 let length = document.getElementById("length").value;
 
+document.getElementById("select").addEventListener("click", () => {
+  length = document.getElementById("length").value;
+  if (length > 15 || length < 1) {
+    displayModal();
+  } else {
+    render();
+    showPalette();
+  }
+});
+
+document.getElementById("close-modal-btn").addEventListener("click", () => {
+  hideModal();
+});
+
 function render() {
-  let = colorBlockHtml = "";
+  let colorBlockHtml = "";
 
   for (let i = 0; i < length; i++) {
     colorBlockHtml += `
@@ -12,9 +28,6 @@ function render() {
   }
   document.getElementById("display-section").innerHTML = colorBlockHtml;
 }
-
-render();
-showPalette();
 
 function showPalette() {
   let color = document.getElementById("color").value.replace("#", "");
@@ -33,7 +46,5 @@ function showPalette() {
     });
 }
 
-document.getElementById("select").addEventListener("click", () => {
-  render();
-  showPalette();
-});
+render();
+showPalette();
