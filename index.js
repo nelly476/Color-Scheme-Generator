@@ -7,6 +7,7 @@ document.getElementById("select").addEventListener("click", () => {
     .then((data) => {
       let targetColor = data.colors[0].hex.value;
       document.getElementById("display-1").style.background = targetColor;
+      document.getElementById("color-code-1").textContent = targetColor;
     });
 });
 
