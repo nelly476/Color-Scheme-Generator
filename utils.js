@@ -1,9 +1,5 @@
-function displayModal() {
-  document.getElementById("warning-modal").style.display = "inline";
+function triggerModal() {
+  document.getElementById("warning-modal").classList.toggle("hidden");
 }
 
-function hideModal() {
-  document.getElementById("warning-modal").style.display = "none";
-}
-
-export { displayModal, hideModal };
+export { triggerModal };

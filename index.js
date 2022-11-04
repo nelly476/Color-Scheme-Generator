@@ -1,11 +1,11 @@
-import { displayModal, hideModal } from "./utils.js";
+import { triggerModal } from "./utils.js";
 
 let length = document.getElementById("length").value;
 
 document.getElementById("select").addEventListener("click", () => {
   length = document.getElementById("length").value;
   if (length > 15 || length < 1) {
-    displayModal();
+    triggerModal();
   } else {
     render();
     showPalette();
@@ -13,7 +13,7 @@ document.getElementById("select").addEventListener("click", () => {
 });
 
 document.getElementById("close-modal-btn").addEventListener("click", () => {
-  hideModal();
+  triggerModal();
 });
 
 function render() {
