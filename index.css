@@ -84,7 +84,7 @@ html {
   right: 0;
   margin: auto auto;
   background-color: #f1f5f9;
-  width: 80%;
+  width: fit-content;
   padding: 1em;
   border-radius: 8px;
 }
@@ -112,6 +112,8 @@ html {
 .close-modal-btn {
   padding: 0.2em 0.4em;
 }
+
+/* Media query */
 
 @media (max-width: 600px) {
   .display-section {
