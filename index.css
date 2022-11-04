@@ -113,6 +113,7 @@ html {
     align-items: stretch;
     height: 100%;
     width: 100vw;
+    padding: 0.2em;
   }
   .color-section {
     display: flex;
