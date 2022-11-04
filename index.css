@@ -100,9 +100,6 @@ html {
 }
 
 @media (max-width: 600px) {
-  html {
-    max-height: 100vh;
-  }
   .display-section {
     display: flex;
     flex-direction: column;
@@ -115,6 +112,7 @@ html {
   .container {
     align-items: stretch;
     height: 100%;
+    width: 100%;
   }
   .color-section {
     display: flex;
