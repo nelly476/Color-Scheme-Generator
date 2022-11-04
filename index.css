@@ -112,7 +112,7 @@ html {
   .container {
     align-items: stretch;
     height: 100%;
-    width: 100%;
+    width: 100vw;
   }
   .color-section {
     display: flex;
