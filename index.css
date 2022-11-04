@@ -74,7 +74,10 @@ html {
   border: 1px solid #f1f5f9;
 }
 
-.warning-modal {
+/* Modals */
+
+.warning-modal,
+.copy-modal {
   position: absolute;
   top: 0.2em;
   left: 0;
@@ -86,11 +89,22 @@ html {
   border-radius: 8px;
 }
 
+.copy-modal {
+  position: absolute;
+  top: 40%;
+  width: 28%;
+  padding: 0.4em;
+}
+
+.copy-modal p {
+  margin: 0.4em;
+}
+
 .hidden {
   display: none;
 }
 
-.warning-close-btn-section {
+.close-btn-section {
   display: flex;
   justify-content: flex-end;
 }

@@ -12,9 +12,9 @@ document.getElementById("select").addEventListener("click", () => {
   }
 });
 
-document.getElementById("close-modal-btn").addEventListener("click", () => {
-  triggerModal();
-});
+document
+  .getElementById("close-modal-btn")
+  .addEventListener("click", triggerModal);
 
 function render() {
   let colorBlockHtml = "";
@@ -30,17 +30,17 @@ function render() {
 }
 
 function showPalette() {
-  let color = document.getElementById("color").value.replace("#", "");
-  let mode = document.getElementById("color-mode").value;
-  let url = `https://www.thecolorapi.com/scheme?hex=${color}&mode=${mode}&count=${length}`;
+  const color = document.getElementById("color").value.replace("#", "");
+  const mode = document.getElementById("color-mode").value;
+  const url = `https://www.thecolorapi.com/scheme?hex=${color}&mode=${mode}&count=${length}`;
 
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
       for (let i = 0; i < data.colors.length; i++) {
-        let color = data.colors[i].hex.value;
-        let targetDisplay = document.getElementById(`display-${i}`);
-        let targetCode = document.getElementById(`color-code-${i}`);
+        const color = data.colors[i].hex.value;
+        const targetDisplay = document.getElementById(`display-${i}`);
+        const targetCode = document.getElementById(`color-code-${i}`);
         targetDisplay.style.background = color;
         targetDisplay.classList.add(color);
 
@@ -54,14 +54,11 @@ render();
 showPalette();
 
 document.getElementById("display-section").addEventListener("click", (e) => {
-  let text = e.target.classList[1];
-
-  // navigator.clipboard.writeText(`${text}`);
-  // alert(`${text}`);
+  const text = e.target.classList[1];
   const copyContent = async () => {
     try {
       await navigator.clipboard.writeText(text);
-      alert("Copied to clipboard");
+      alert("Code copied");
     } catch (err) {
       console.error("Failed to copy: ", err);
     }
