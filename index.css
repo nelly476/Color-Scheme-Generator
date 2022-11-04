@@ -11,7 +11,7 @@ html {
 
 .container {
   position: relative;
-  max-width: 100%;
+  width: 100%;
   border-radius: 8px;
   display: flex;
   flex-direction: column;
@@ -27,6 +27,13 @@ html {
   align-items: center;
   column-gap: 2em;
   padding: 1.2em 0.6em;
+}
+
+.set-length-section {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: flex-end;
+  column-gap: 0.2em;
 }
 
 .button-section {
@@ -51,12 +58,16 @@ html {
   display: flex;
 }
 
+.color-section {
+  height: 500px;
+}
+
 .display {
-  min-width: 5em;
-  height: 450px;
+  width: 5em;
+  height: 85%;
 }
 .color-code {
-  height: 4em;
+  height: 15%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,8 +99,32 @@ html {
   padding: 0.2em 0.4em;
 }
 
-@media (min-width: 350px) {
+@media (max-width: 600px) {
+  html {
+    max-height: 100vh;
+  }
+  .display-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .display {
+    width: 73%;
+    height: 3em;
+  }
+
   .container {
-    min-width: fit-content;
+    align-items: stretch;
+    height: 100%;
+  }
+  .color-section {
+    display: flex;
+    max-height: 3em;
+  }
+  .color-code {
+    height: 3em;
+  }
+  .button-section {
+    display: flex;
+    justify-content: center;
   }
 }
