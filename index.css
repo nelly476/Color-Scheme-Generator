@@ -108,7 +108,7 @@ html {
     flex-direction: column;
   }
   .display {
-    width: 73%;
+    width: 70%;
     height: 3em;
   }
 
@@ -122,6 +122,7 @@ html {
   }
   .color-code {
     height: 3em;
+    width: 30%;
   }
   .button-section {
     display: flex;
