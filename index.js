@@ -39,12 +39,32 @@ function showPalette() {
     .then((data) => {
       for (let i = 0; i < data.colors.length; i++) {
         let color = data.colors[i].hex.value;
-        document.getElementById(`display-${i}`).style.background = color;
+        let targetDisplay = document.getElementById(`display-${i}`);
+        let targetCode = document.getElementById(`color-code-${i}`);
+        targetDisplay.style.background = color;
+        targetDisplay.classList.add(color);
 
-        document.getElementById(`color-code-${i}`).textContent = color;
+        targetCode.textContent = color;
+        targetCode.classList.add(color);
       }
     });
 }
 
 render();
 showPalette();
+
+document.getElementById("display-section").addEventListener("click", (e) => {
+  let text = e.target.classList[1];
+
+  // navigator.clipboard.writeText(`${text}`);
+  // alert(`${text}`);
+  const copyContent = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      alert("Copied to clipboard");
+    } catch (err) {
+      console.error("Failed to copy: ", err);
+    }
+  };
+  copyContent();
+});
