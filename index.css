@@ -92,8 +92,8 @@ html {
 .copy-modal {
   position: absolute;
   top: 40%;
-  width: 28%;
-  padding: 0.4em;
+  width: fit-content;
+  padding: 0.5em;
 }
 
 .copy-modal p {

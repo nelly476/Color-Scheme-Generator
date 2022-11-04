@@ -1,4 +1,4 @@
-import { triggerModal } from "./utils.js";
+import { triggerModal, triggerAlert } from "./utils.js";
 
 let length = document.getElementById("length").value;
 
@@ -58,7 +58,8 @@ document.getElementById("display-section").addEventListener("click", (e) => {
   const copyContent = async () => {
     try {
       await navigator.clipboard.writeText(text);
-      alert("Code copied");
+      triggerAlert();
+      setTimeout(triggerAlert, 2000);
     } catch (err) {
       console.error("Failed to copy: ", err);
     }
